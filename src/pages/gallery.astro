@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Define all gallery images from the public folder
+const galleryImages = [
+  { url: "/2019-10-18.jpg", alt: "Skateboarding 2019" },
+  { url: "/2021-05-01 (1).jpg", alt: "Skateboarding 2021" },
+  { url: "/2019-05-10.jpg", alt: "Skateboarding event" },
+  { url: "/2021-12-31 (1).jpg", alt: "Year-end skateboarding" },
+  { url: "/2021-05-01.jpg", alt: "Skateboarding May 2021" },
+  { url: "/2023-05-29.jpg", alt: "Skate park session" },
+  { url: "/2022-06-23.jpg", alt: "Summer skateboarding" },
+  { url: "/2021-03-13.jpg", alt: "March skateboarding" },
+  { url: "/2019-03-15.jpg", alt: "Early spring skate" },
+  { url: "/2019-07-25.jpg", alt: "Summer skate session" },
+  { url: "/2019-10-26.jpg", alt: "Fall skateboarding" },
+  { url: "/2019-10-05.jpg", alt: "October skateboarding" },
+  { url: "/unnamed (18).jpg", alt: "Skateboarding trick" },
+  { url: "/2021-12-31.jpg", alt: "End of year skate" },
+  { url: "/2017-10-10.jpg", alt: "Skateboarding 2017" },
+  { url: "/2022-03-01.jpg", alt: "March skateboarding 2022" },
+  { url: "/2020-01-25.jpg", alt: "Winter skateboarding" },
+  { url: "/unnamed (17).jpg", alt: "Skateboarding session" },
+  { url: "/unnamed (16).jpg", alt: "Trick practice" },
+  { url: "/unnamed (15).jpg", alt: "Skate park view" },
+  { url: "/unnamed (14).jpg", alt: "Skateboard closeup" },
+  { url: "/unnamed (13).jpg", alt: "Skateboarding event" },
+  { url: "/unnamed (12).jpg", alt: "Team skateboarding" },
+  { url: "/unnamed (11).jpg", alt: "Pro skater" },
+  { url: "/unnamed (10).jpg", alt: "Skateboard exhibition" },
+  { url: "/unnamed (9).jpg", alt: "Skateboarding competition" },
+  { url: "/unnamed (8).jpg", alt: "Skate park" },
+  { url: "/unnamed (7).jpg", alt: "Urban skateboarding" },
+  { url: "/unnamed (6).jpg", alt: "Street skateboarding" },
+  { url: "/unnamed (5).jpg", alt: "Skateboarding demo" },
+  { url: "/unnamed (4).jpg", alt: "Skateboard shop" },
+  { url: "/unnamed (3).jpg", alt: "Skateboarding friends" },
+  { url: "/IMG_4813[1].JPG", alt: "Skateboarding photo" },
+  { url: "/unnamed (2).jpg", alt: "Skateboarding practice" },
+  { url: "/unnamed (1).jpg", alt: "Skateboarding event" },
+  { url: "/unnamed.jpg", alt: "Skateboarding lifestyle" }
+];
+---
+
+<Layout>
+  <Header />
+  <section class="py-24 bg-skate-gray">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="font-marker text-5xl mb-6 text-center">Photo Gallery</h1>
+        <p class="text-gray-400 text-center mb-12 text-lg">Browse our complete collection of skateboarding moments</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {galleryImages.map(image => (
+            <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick={`openModal('${image.url}', '${image.alt}')`}>
+              <img 
+                src={image.url} 
+                alt={image.alt}
+                class="w-full h-[250px] object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a 
+            href="/"
+            class="inline-block bg-skate-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-600 transition duration-300"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal overlay -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+      <div class="relative max-w-4xl mx-auto p-4">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl hover:text-red-500">&times;</button>
+        <img id="modalImage" src="" alt="" class="max-h-[80vh] max-w-full">
+        <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<script>
+  // Modal functionality
+  window.openModal = function(src, alt) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modalCaption.textContent = alt;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+  
+  window.closeModal = function() {
+    document.getElementById('imageModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  };
+  
+  // Close modal when clicking outside the image
+  document.getElementById('imageModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+      closeModal();
+    }
+  });
+  
+  // Close modal with escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script> 

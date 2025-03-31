@@ -1,0 +1,74 @@
+---
+const hours = [
+  { day: 'Monday', hours: '9:30 AM–3 PM' },
+  { day: 'Tuesday', hours: '9:30 AM–3 PM' },
+  { day: 'Wednesday', hours: '9:30 AM–3 PM' },
+  { day: 'Thursday', hours: '9:30 AM–3 PM' },
+  { day: 'Friday', hours: '9:30 AM–3 PM' },
+  { day: 'Saturday', hours: '9:30 AM–2 PM' },
+  { day: 'Sunday', hours: 'Closed' },
+];
+---
+<section id="contact" class="py-24 bg-skate-gray">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-marker text-4xl mb-12 text-center">Visit Our Shop</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-skate-black p-8 rounded-2xl border border-white/10">
+          <h3 class="text-2xl font-bold mb-6 text-skate-red">Store Hours</h3>
+          <div class="space-y-3">
+            {hours.map(({ day, hours }) => (
+              <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                <span class="font-medium">{day}</span>
+                <span class="text-gray-400">{hours}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div class="bg-skate-black p-8 rounded-2xl border border-white/10">
+          <h3 class="text-2xl font-bold mb-6 text-skate-red">Find Us</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-gray-400 mb-2">Address</p>
+              <a 
+                href="https://maps.google.com/?q=328+Omar+St,+Los+Angeles,+CA+90013" 
+                target="_blank" 
+                class="text-xl hover:text-skate-red transition duration-300"
+              >
+                328 Omar St,<br/>Los Angeles, CA 90013
+              </a>
+            </div>
+            
+            <div>
+              <p class="text-gray-400 mb-2">Phone</p>
+              <a 
+                href="tel:+12139473035" 
+                class="text-xl hover:text-skate-red transition duration-300"
+              >
+                (213) 947-3035
+              </a>
+            </div>
+            
+            <div class="pt-4">
+              <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg">
+                <div class="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <svg xmlns="http://www.w3.org/2000/svg" class={`h-6 w-6 ${i < 4 ? "text-yellow-400" : "text-yellow-400/50"}`} viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <div>
+                  <span class="font-bold">4.7</span>
+                  <span class="text-gray-400 ml-1">(746 Google reviews)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

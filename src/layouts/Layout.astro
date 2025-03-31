@@ -1,0 +1,25 @@
+---
+import '@fontsource/rubik/400.css';
+import '@fontsource/rubik/700.css';
+import '@fontsource/permanent-marker/400.css';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>America's Best Choice SKB - Premier Skateboard Shop in Los Angeles</title>
+    <meta name="description" content="Los Angeles' premier skateboard shop offering a large selection of skateboards, longboards, cruisers, and penny boards. Visit us today!" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-skate-black font-rubik text-white">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

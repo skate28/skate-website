@@ -1,0 +1,10 @@
+this._s=this._s||{};(function(_){var window=this;
+try{
+_.r("soHxf");
+var sdf;sdf=new Set(["aria-label","disabled"]);
+_.tdf=class extends _.NK{static Ra(){return{service:{Wk:_.Kr}}}constructor(a){super(a.Oa);this[_.GD]=!0;this.Wk=a.service.Wk;if(_.zE(this.getRoot())&&(this.getRoot().hasClass("tN4Gf")||this.getRoot().hasClass("CeiTH"))){a=this.getRoot().el();var b=this.Mv.bind(this);a.__soy_skip_handler=b}}getLabel(){return this.Ab("V67aGc").Zb()}setLabel(a){this.Ab("V67aGc").wc(a)}hq(a){_.id([(0,_.sd)`aria-`],this.getRoot().el(),"aria-label",a)}Mv(a,b){var c=b.getLabel();b.Ba()||typeof c!=="string"||c===this.Fa("V67aGc").Zb()||
+(this.setLabel(c.toString()),this.Ea());_.qdf(this.getRoot(),this.Xa("V67aGc"),b,this.Wk,()=>{this.Ea()});!!b.Xi()!==this.Eh()&&this.Di(!!b.Xi());c=b.Sh();c!==this.getRoot().Xc("aria-label")&&(c?_.id([(0,_.sd)`aria-`],this.getRoot().el(),"aria-label",c):this.getRoot().removeAttr("aria-label"));_.mdf(this,a.data.kc,b.data.kc);a=(a=b.data.attributes)?a.toString():"";_.wE(this.getRoot(),a,{Uga:sdf});return!0}};_.H(_.tdf.prototype,"SQpL2c",function(){return this.getLabel});_.O(_.rdf,_.tdf);
+_.u();
+}catch(e){_._DumpException(e)}
+})(this._s);
+// Google Inc.

@@ -1,0 +1,52 @@
+---
+const features = [
+  {
+    title: 'Expert Staff',
+    description: 'Our team of experienced skaters provides personalized advice for all skill levels.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+  },
+  {
+    title: 'Custom Builds',
+    description: 'Get your dream setup with our custom skateboard building service.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+    </svg>`
+  },
+  {
+    title: 'Premium Brands',
+    description: 'We carry only the best skateboarding brands and equipment.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>`
+  },
+  {
+    title: 'Community Events',
+    description: 'Join our regular skateboarding events and connect with fellow skaters.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>`
+  }
+];
+---
+<section id="about" class="py-24 bg-skate-gray">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-marker text-4xl mb-4">Why Choose Us?</h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Since 1995, we've been LA's go-to destination for all things skateboarding. Our passion for the sport and commitment to quality sets us apart.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        {features.map(feature => (
+          <div class="bg-skate-black p-6 rounded-xl border border-white/10">
+            <div class="text-skate-red mb-4" set:html={feature.icon} />
+            <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+            <p class="text-gray-400">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
