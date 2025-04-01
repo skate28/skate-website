@@ -34,16 +34,16 @@ const features = [
   <div class="container mx-auto px-4">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="font-marker text-4xl mb-4">Why Choose Us?</h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Since 1995, we've been LA's go-to destination for all things skateboarding. Our passion for the sport and commitment to quality sets us apart.</p>
+        <h2 class="font-marker text-2xl md:text-3xl mb-4">Why Choose Us?</h2>
+        <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">Since 1995, we've been LA's go-to destination for all things skateboarding. Our passion for the sport and commitment to quality sets us apart.</p>
       </div>
       
       <div class="grid md:grid-cols-2 gap-8">
         {features.map(feature => (
           <div class="bg-skate-black p-6 rounded-xl border border-white/10">
             <div class="text-skate-red mb-4" set:html={feature.icon} />
-            <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
-            <p class="text-gray-400">{feature.description}</p>
+            <h3 class="text-base md:text-lg font-bold mb-2">{feature.title}</h3>
+            <p class="text-gray-400 text-xs md:text-sm">{feature.description}</p>
           </div>
         ))}
       </div>
